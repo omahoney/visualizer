@@ -1,11 +1,9 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import '@styles/globals.css';
+import Nav from '@components/Nav';
 
 export const metadata = {
-  title: 'Visualizer',
-  description: 'The Fair Use Visualizer Project',
+  title: 'Viztopia',
+  description: 'Create and share your Fair Use Visualizers'
 }
 
 export default function RootLayout({
@@ -15,7 +13,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className="main">
+          <div className="gradient" />
+        </div>
+
+        <main className="app">
+          <Nav />
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

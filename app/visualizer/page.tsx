@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
-import { Visualizer } from '@/models.ts/Visualizer'
-import Slider from '@/components/Slider'
+import { Visualizer } from '@models/Visualizer'
+import Slider from '@components/Slider'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -21,7 +21,7 @@ export default function Visualizer() {
       >
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/logo.png"
+          src="/assets/images/logo.png"
           alt="Copyright Website Logo"
           width={370}
           height={85}
@@ -37,26 +37,28 @@ export default function Visualizer() {
           <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
             <div>
               <Slider 
-                id: 1,
-                topLabel: 'Commercial',
-                bottomLabel: 'Non-Commercial',
-                step: "5",
-                value: "0",
-                min: "0",
-                max: "100",
-                weight: 1 
+                id={1}
+                label= 'SubFactor 1 - Use'
+                topLabel= 'Non-Commercial'
+                bottomLabel= 'Commercial'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
               />
             </div>
             <div>
-              <Slider 
-                id: 2,
-                topLabel: 'Supplants',
-                bottomLabel: 'Adds To',
-                step: "5",
-                value: "0",
-                min: "0",
-                max: "100",
-                weight: 1
+            <Slider 
+                id={2}
+                label= 'SubFactor 1 - Transform'
+                topLabel= 'Adds To'
+                bottomLabel= 'Supplants'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
               />
             </div>
           </dd>
@@ -66,16 +68,17 @@ export default function Visualizer() {
           <dt className="text-base font-normal text-gray-900">Factor 2</dt>
           <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
             <div>
-              <Slider 
-                id: 3,
-                topLabel: 'Extremely',
-                bottomLabel: 'Not So Much',
-                step: "5",
-                value: "0",
-                min: "0",
-                max: "100",
-                weight: 1 
-              />             
+            <Slider 
+                id={3}
+                label= 'Factor 2 - Nature'
+                topLabel= 'Not So Much'
+                bottomLabel= 'Extremely'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              />           
             </div>
           </dd>
         </div>
@@ -85,87 +88,87 @@ export default function Visualizer() {
           <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
             <div>
             <Slider 
-              id: 4,
-              topLabel: 'All',
-              bottomLabel: 'Very Little',
-              step: "5",
-              value: "0",
-              min: "0",
-              max: "100",
-              weight: 1
-            />
-        <Slider 
-        id: 5,
-        topLabel: 'Substantial',
-        bottomLabel: 'Incidental',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1    
-        />
-        <Slider 
-        id: 6,
-        topLabel: 'All',
-        bottomLabel: 'Very Little',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1
-        />
+                id={4}
+                label= 'SubFactor 3 - Taken'
+                topLabel= '0%'
+                bottomLabel= '100%'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              /> 
+             <Slider 
+                id={5}
+                label= 'SubFactor 3 - Quality'
+                topLabel= 'Insubstantial'
+                bottomLabel= 'Substantial'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              /> 
+            <Slider 
+                id={6}
+                label= 'SubFactor 3 - Ratio'
+                topLabel= '0%'
+                bottomLabel= '100%'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              /> 
             </div>
           </dd>
         </div>
 
         <div className="px-4 py-5 sm:p-6">
-          <dt className="text-base font-normal text-gray-900">Factor 4</dt>
+          <dt className="text-base font-normal text-gray-900">Factor 4 - Market Effect</dt>
           <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
             <div>
             <Slider 
-            id: 4,
-        topLabel: 'All',
-        bottomLabel: 'Very Little',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1
-        <Slider 
-        id: 5,
-        topLabel: 'Substantial',
-        bottomLabel: 'Incidental',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1
-        <Slider 
-        id: 6,
-        topLabel: 'All',
-        bottomLabel: 'Very Little',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1
-        />
+                id={7}
+                label= 'SubFactor 4 - Original'
+                topLabel= 'Insignificant'
+                bottomLabel= 'Extreme'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              /> 1
+            <Slider 
+                id={8}
+                label= 'SubFactor 4 - Derivative'
+                topLabel= 'In'
+                bottomLabel= 'Extreme'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              /> 
             </div>
           </dd>
         </div>
 
         <div className="px-4 py-5 sm:p-6">
-          <dt className="text-base font-normal text-gray-900">Factor 5</dt>
+          <dt className="text-base font-normal text-gray-900">Factor 5 - Bonus</dt>
           <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
             <div>
-            id: 6,
-        topLabel: 'All',
-        bottomLabel: 'Very Little',
-        step: "5",
-        value: "0",
-        min: "0",
-        max: "100",
-        weight: 1,             
+            <Slider 
+                id={9}
+                label= 'Factor 5 - Bonus'
+                topLabel= 'Good Faith'
+                bottomLabel= 'Duplicitous'
+                step={5}
+                value={0}
+                min={0}
+                max={100}
+                weight={1}
+              />              
             </div>
           </dd>
         </div>    
